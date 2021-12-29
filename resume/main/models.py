@@ -88,7 +88,7 @@ class Media(models.Model):
         return self.name
 
 
-class Portfolio(models.Models):
+class Portfolio(models.Model):
     class Meta:
         verbose_name_plural = 'Portfolio Profiles'
         verbose_name = 'Portfolio'
@@ -96,7 +96,7 @@ class Portfolio(models.Models):
 
     date = models.DateTimeField(blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
-    description = models.Charfield(max_length=500, blank=True, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to="portfolio")
     slug = models.SlugField(blank=True, null=True)
@@ -106,3 +106,50 @@ class Portfolio(models.Models):
         if not self.id:
             self.slug = slugify(self.name)
         super(Portfolio, self).save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return f"/portfolio/{self.slug}"
+
+class Blog(models.Model):
+    class Meta:
+        verbose_name_plural = "Blog Profiles"
+        verbose_name = "Blog"
+        ordering = ["timestamp"]
+    
+    timestamp = models.DateTimeField(auto_now_add=True)
+    author = models.CharField(max_length=200, blank=True, null=True)
+    name = models.CharField(max_length=200, blank=True, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
+    body = RichTextField(blank=True, null=True)
+    slug = models.SlugField(null=True, blank=True)
+    image = models.ImageField(blank=True, null=True, upload_to="blog")
+    is_active = models.BooleanField(default=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.name)
+        super(Portfolio, self).save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return f"/blog/{self.slug}"
+
+class Certificate(models.Model):
+    class Meta:
+        verbose_name_plural = "Certifications"
+        verbose_name = "Certification"
+    
+    date = models.DateTimeField(blank=True, null=True)
+    name = models.CharField(max_length=50, blank=True, null=True)
+    title = models.CharField(max_length=200, blank=True, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.name
+        
