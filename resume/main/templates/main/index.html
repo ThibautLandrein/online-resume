@@ -4,7 +4,7 @@
 <!-- ================================
 Start SEO blocks
 ================================= -->
-{% block title %}Thibaut Landrein - Online resume{% endblock %}
+{% block title %}{% endblock %}
 {% block decription %}{% endblock %}
 {% block keywords %}{% endblock %}
 <!-- ================================
@@ -160,7 +160,7 @@ Start Content
             <h4 class="smText regular">Featured Work</h4>
           </div>
           <div class="col-auto">
-            <a href="{% url 'main:portfolios' %}" class="simpleLink">View all</a>
+            <a href="{% url 'main:portfolio' %}" class="simpleLink">View all</a>
           </div>
         </div>
         {% for p in portfolio %}
@@ -234,7 +234,7 @@ Start Content
           <h4 class="smText regular">Recent posts</h4>
         </div>
         <div class="col-auto">
-          <a href="{% url 'main:blogs' %}" class="simpleLink">View all</a>
+          <a href="{% url 'main:blog' %}" class="simpleLink">View all</a>
         </div>
       </div>
       <div class="row g-3">

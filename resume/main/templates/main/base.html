@@ -13,8 +13,8 @@
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{% 'images/icon.jpg' %}">
-    <link rel="apple-touch-icon" type="image/jpg" href="{% 'images/icon.jpg' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/icon.jpg' %}">
+    <link rel="apple-touch-icon" type="image/jpg" href="{% static 'images/icon.jpg' %}">
 
     <!-- ================================
     Start CSS
@@ -33,7 +33,8 @@
     {% include 'main/partials/messages.html' %}
     {% include 'main/partials/nav.html' %}
     
-    {% block content % } {% endblock %}
+    {% block content %}
+    {% endblock %}
     
     <!-- ================================
     Start Footer
@@ -49,7 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="https://unpkg.com/swiper@7.0.5/swiper-bundle.min.js"></script>
-    <script src="{% 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     {% block extend_footer %}{%endblock%}
     <!-- ================================
     End Scripts
