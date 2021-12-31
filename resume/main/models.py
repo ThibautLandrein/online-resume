@@ -34,7 +34,7 @@ class UserProfile(models.Model):
     skill = models.ManyToManyField(Skill, blank=True)
     cv = models.FileField(blank=True, null=True, upload_to="cv")
     linkedin = models.URLField(max_length=200, blank=True, null=True)
-
+    github = models.URLField(max_length=200, blank=True, null=True)
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
 
