@@ -90,6 +90,9 @@ Start Content
               {% if not sk.is_key_skill %}
               <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
+				</div>
+				
+				<div class="progressCol">
                 <div class="row g-2 align-items-center">
                   <div class="col">
 				  {% if sk.image %}
@@ -98,11 +101,9 @@ Start Content
 				</div>
 				{% endif %}
                   </div>
-                 <!--  <div class="col-auto">
-                    <span class="pLbl">{{sk.score}}%</span>
-                  </div> -->
                 </div>
-              </div>
+				</div>
+              
               {% endif %}
               {% endfor %}
               
