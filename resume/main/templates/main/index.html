@@ -90,13 +90,11 @@ Start Content
               {% if not sk.is_key_skill %}
               <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
-                <!-- <div class="row g-2 align-items-center"> -->
 				  {% if sk.image %}
-                    <div class="ksIconCol">
+                    <!-- <div class="ksIconCol"> -->
 					<img src="{{sk.image.url}}" alt="...">
-				</div>
+				<!-- </div> -->
 				{% endif %}
-                <!-- </div> -->
               </div>
               {% endif %}
               {% endfor %}
