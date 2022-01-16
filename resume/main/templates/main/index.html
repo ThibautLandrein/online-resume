@@ -89,12 +89,11 @@ Start Content
               {% for sk in me.userprofile.skill.all %}
               {% if not sk.is_key_skill %}
               <div class="progressCol">
-                <span class="progressLbl">{{sk.name}}</span>
-				  {% if sk.image %}
-                    <!-- <div class="ksIconCol"> -->
+			  {% if sk.image %}
 					<img src="{{sk.image.url}}" alt="...">
-				<!-- </div> -->
-				{% endif %}
+			   {% endif %}
+                <span class="progressLbl">{{sk.name}}</span>
+				  
               </div>
               {% endif %}
               {% endfor %}
