@@ -16,6 +16,7 @@ class Skill(models.Model):
     score = models.IntegerField(default=80, blank=True, null=True)
     image = models.FileField(blank=True, null=True, upload_to="skills")
     is_key_skill = models.BooleanField(default=False)
+    url = models.URLField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.name

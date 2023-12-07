@@ -1,10 +1,9 @@
-from django.shortcuts import render
+
 from django.contrib import messages
 from .models import (UserProfile, Blog, Portfolio, Testimonial, Certificate)
 
 from django.views import generic
 from . forms import ContactForm
-# Create your views here.
 
 class IndexView(generic.TemplateView):
     template_name = "main/index.html"

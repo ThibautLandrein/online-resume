@@ -154,7 +154,7 @@ a, .btn {
 
 /* navigation */
 .navCol {
-	text-align: right;
+	text-align: center;
 }
 .navCol a {
 	font-size: 20px;
@@ -773,4 +773,12 @@ input[type=text], input[type=email], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical
+}
+
+a {
+  display: inline-block;
+}
+
+.socialCol a:hover img {
+  opacity: .5
 }
